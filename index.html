@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coopérative RTIM - Miel et Produits Naturels du Maroc</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Crimson+Text:wght@400;600&family=Amiri:wght@400;700&display=swap');
-
+        
         :root {
             --honey-gold: #D4A574;
             --honey-dark: #8B6914;
@@ -20,13 +19,13 @@
             --black: #1A1A1A;
             --shadow: rgba(0, 0, 0, 0.1);
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Crimson Text', serif;
             background: linear-gradient(135deg, var(--cream) 0%, #FFF5E1 100%);
@@ -34,11 +33,11 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
+        
         body[dir="rtl"] {
             font-family: 'Amiri', serif;
         }
-
+        
         /* Decorative Background Pattern */
         body::before {
             content: '';
@@ -47,13 +46,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image:
+            background-image: 
                 radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(45, 80, 22, 0.03) 0%, transparent 50%);
             pointer-events: none;
             z-index: -1;
         }
-
+        
         /* Header */
         header {
             background: linear-gradient(135deg, var(--honey-dark) 0%, var(--earth-brown) 100%);
@@ -65,7 +64,7 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
         }
-
+        
         .header-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -76,7 +75,7 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
-
+        
         .logo {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
@@ -88,14 +87,33 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: 0 2px 10px rgba(212, 165, 116, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-
+        
+        .logo-image {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(212, 165, 116, 0.4));
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-text {
+            display: inline-block;
+        }
+        
         .header-actions {
             display: flex;
             gap: 1.5rem;
             align-items: center;
         }
-
+        
         .lang-switch {
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid var(--honey-gold);
@@ -108,13 +126,13 @@
             font-family: inherit;
             font-size: 0.95rem;
         }
-
+        
         .lang-switch:hover {
             background: var(--honey-gold);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4);
         }
-
+        
         .cart-btn {
             position: relative;
             background: var(--terracotta);
@@ -129,12 +147,12 @@
             font-size: 1rem;
             box-shadow: 0 4px 15px rgba(198, 93, 59, 0.3);
         }
-
+        
         .cart-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(198, 93, 59, 0.5);
         }
-
+        
         .cart-count {
             position: absolute;
             top: -8px;
@@ -151,19 +169,12 @@
             font-weight: 700;
             animation: pulse 2s infinite;
         }
-
+        
         @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.1);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
-
+        
         /* Hero Section */
         .hero {
             text-align: center;
@@ -173,7 +184,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .hero::before {
             content: '🍯';
             position: absolute;
@@ -184,7 +195,7 @@
             transform: translate(-50%, -50%) rotate(-15deg);
             pointer-events: none;
         }
-
+        
         .hero h1 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 3.5rem;
@@ -194,7 +205,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
             animation: fadeInDown 1s ease;
         }
-
+        
         .hero p {
             font-size: 1.3rem;
             color: var(--earth-brown);
@@ -202,31 +213,29 @@
             margin: 0 auto 2rem;
             animation: fadeInUp 1s ease 0.2s backwards;
         }
-
+        
         @keyframes fadeInDown {
             from {
                 opacity: 0;
                 transform: translateY(-30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
+        
         /* Category Filter */
         .category-filter {
             max-width: 1400px;
@@ -237,7 +246,7 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-
+        
         .category-btn {
             background: var(--white);
             border: 2px solid var(--honey-gold);
@@ -251,7 +260,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 10px var(--shadow);
         }
-
+        
         .category-btn:hover,
         .category-btn.active {
             background: var(--honey-gold);
@@ -259,29 +268,24 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 20px rgba(212, 165, 116, 0.4);
         }
-
+        
         /* Products Grid */
         .products-container {
             max-width: 1400px;
             margin: 3rem auto;
             padding: 0 2rem;
         }
-
+        
         .category-section {
             margin-bottom: 4rem;
             animation: fadeIn 0.6s ease;
         }
-
+        
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-
+        
         .category-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.5rem;
@@ -292,7 +296,7 @@
             position: relative;
             padding-bottom: 1rem;
         }
-
+        
         .category-title::after {
             content: '';
             position: absolute;
@@ -303,13 +307,13 @@
             height: 3px;
             background: linear-gradient(90deg, transparent, var(--honey-gold), transparent);
         }
-
+        
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2rem;
         }
-
+        
         .product-card {
             background: var(--white);
             border-radius: 20px;
@@ -320,7 +324,7 @@
             overflow: hidden;
             border: 2px solid transparent;
         }
-
+        
         .product-card::before {
             content: '';
             position: absolute;
@@ -333,24 +337,51 @@
             transform-origin: left;
             transition: transform 0.4s ease;
         }
-
+        
         .product-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
             border-color: var(--honey-gold);
         }
-
+        
         .product-card:hover::before {
             transform: scaleX(1);
         }
-
+        
         .product-icon {
             font-size: 3.5rem;
             text-align: center;
             margin-bottom: 1rem;
             filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
         }
-
+        
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        
+        .product-image-placeholder {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, var(--honey-light) 0%, var(--cream) 100%);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
         .product-name {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
@@ -359,7 +390,7 @@
             margin-bottom: 0.5rem;
             text-align: center;
         }
-
+        
         .product-description {
             font-size: 0.95rem;
             color: var(--earth-brown);
@@ -368,7 +399,7 @@
             min-height: 2.4rem;
             font-style: italic;
         }
-
+        
         .product-price {
             font-size: 1.8rem;
             font-weight: 700;
@@ -376,13 +407,13 @@
             text-align: center;
             margin-bottom: 1rem;
         }
-
+        
         .product-unit {
             font-size: 0.9rem;
             color: var(--earth-brown);
             opacity: 0.8;
         }
-
+        
         .product-quantity {
             display: flex;
             align-items: center;
@@ -390,7 +421,7 @@
             gap: 1rem;
             margin-bottom: 1rem;
         }
-
+        
         .qty-btn {
             background: var(--honey-light);
             border: 2px solid var(--honey-gold);
@@ -406,13 +437,13 @@
             align-items: center;
             justify-content: center;
         }
-
+        
         .qty-btn:hover {
             background: var(--honey-gold);
             color: var(--white);
             transform: scale(1.1);
         }
-
+        
         .qty-input {
             width: 60px;
             text-align: center;
@@ -423,7 +454,7 @@
             font-weight: 600;
             font-family: inherit;
         }
-
+        
         .add-to-cart-btn {
             width: 100%;
             background: linear-gradient(135deg, var(--honey-gold), var(--honey-dark));
@@ -438,16 +469,16 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
         }
-
+        
         .add-to-cart-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(212, 165, 116, 0.5);
         }
-
+        
         .add-to-cart-btn:active {
             transform: translateY(0);
         }
-
+        
         /* Cart Modal */
         .cart-modal {
             display: none;
@@ -461,13 +492,13 @@
             z-index: 2000;
             animation: fadeIn 0.3s ease;
         }
-
+        
         .cart-modal.active {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-
+        
         .cart-content {
             background: var(--white);
             border-radius: 20px;
@@ -479,19 +510,18 @@
             box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
             animation: slideIn 0.3s ease;
         }
-
+        
         @keyframes slideIn {
             from {
                 opacity: 0;
                 transform: translateY(-50px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
+        
         .cart-header {
             display: flex;
             justify-content: space-between;
@@ -500,13 +530,13 @@
             padding-bottom: 1rem;
             border-bottom: 2px solid var(--honey-gold);
         }
-
+        
         .cart-header h2 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
             color: var(--honey-dark);
         }
-
+        
         .close-cart {
             background: none;
             border: none;
@@ -521,16 +551,16 @@
             justify-content: center;
             border-radius: 50%;
         }
-
+        
         .close-cart:hover {
             background: var(--honey-light);
             transform: rotate(90deg);
         }
-
+        
         .cart-items {
             margin-bottom: 2rem;
         }
-
+        
         .cart-item {
             display: flex;
             justify-content: space-between;
@@ -541,29 +571,29 @@
             border-radius: 15px;
             border: 2px solid var(--honey-gold);
         }
-
+        
         .cart-item-info {
             flex: 1;
         }
-
+        
         .cart-item-name {
             font-weight: 700;
             color: var(--honey-dark);
             margin-bottom: 0.3rem;
         }
-
+        
         .cart-item-details {
             font-size: 0.9rem;
             color: var(--earth-brown);
         }
-
+        
         .cart-item-price {
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--terracotta);
             margin: 0 1rem;
         }
-
+        
         .remove-item {
             background: var(--terracotta);
             color: var(--white);
@@ -575,12 +605,12 @@
             font-size: 1.2rem;
             transition: all 0.3s ease;
         }
-
+        
         .remove-item:hover {
             transform: scale(1.2);
             box-shadow: 0 2px 10px rgba(198, 93, 59, 0.5);
         }
-
+        
         .cart-total {
             background: linear-gradient(135deg, var(--honey-dark), var(--earth-brown));
             color: var(--white);
@@ -588,21 +618,21 @@
             border-radius: 15px;
             margin-bottom: 1.5rem;
         }
-
+        
         .cart-total-row {
             display: flex;
             justify-content: space-between;
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
         }
-
+        
         .cart-total-row.final {
             font-size: 1.5rem;
             font-weight: 700;
             padding-top: 1rem;
             border-top: 2px solid rgba(255, 255, 255, 0.3);
         }
-
+        
         .checkout-btn {
             width: 100%;
             background: var(--deep-green);
@@ -617,24 +647,24 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
         }
-
+        
         .checkout-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(45, 80, 22, 0.5);
         }
-
+        
         .empty-cart {
             text-align: center;
             padding: 3rem 1rem;
             color: var(--earth-brown);
         }
-
+        
         .empty-cart-icon {
             font-size: 4rem;
             margin-bottom: 1rem;
             opacity: 0.3;
         }
-
+        
         /* Contact Section */
         .contact-section {
             background: linear-gradient(135deg, var(--honey-dark) 0%, var(--earth-brown) 100%);
@@ -642,7 +672,7 @@
             padding: 4rem 2rem;
             margin-top: 4rem;
         }
-
+        
         .contact-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -650,42 +680,42 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
         }
-
+        
         .contact-block h3 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
             margin-bottom: 1rem;
             color: var(--honey-light);
         }
-
+        
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
-
+        
         .contact-item {
             display: flex;
             align-items: start;
             gap: 1rem;
         }
-
+        
         .contact-item-icon {
             font-size: 1.5rem;
             margin-top: 0.2rem;
         }
-
+        
         .contact-link {
             color: var(--honey-light);
             text-decoration: none;
             transition: all 0.3s ease;
         }
-
+        
         .contact-link:hover {
             color: var(--honey-gold);
             text-decoration: underline;
         }
-
+        
         /* Footer */
         footer {
             background: var(--black);
@@ -694,79 +724,74 @@
             padding: 2rem;
             font-size: 0.95rem;
         }
-
+        
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
-
+            
             .hero p {
                 font-size: 1.1rem;
             }
-
+            
             .products-grid {
                 grid-template-columns: 1fr;
             }
-
+            
             .category-filter {
                 justify-content: stretch;
             }
-
+            
             .category-btn {
                 flex: 1;
                 min-width: 120px;
             }
-
+            
             .header-container {
                 justify-content: center;
                 text-align: center;
             }
-
+            
             .logo {
                 font-size: 1.5rem;
             }
+            
+            .logo-image {
+                height: 40px;
+            }
         }
-
+        
         /* RTL Support */
         [dir="rtl"] .cart-count {
             right: auto;
             left: -8px;
         }
-
+        
         [dir="rtl"] .category-title::after {
             left: auto;
             right: 50%;
             transform: translateX(50%);
         }
-
+        
         /* Success Animation */
         @keyframes successPulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.1);
-                background: var(--deep-green);
-            }
-
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); background: var(--deep-green); }
+            100% { transform: scale(1); }
         }
-
+        
         .add-to-cart-btn.success {
             animation: successPulse 0.5s ease;
         }
     </style>
 </head>
-
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <span class="logo-text">RTIM</span>
+                <img src="images/logo.png" alt="RTIM Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                <span class="logo-text" style="display: none;">RTIM</span>
             </div>
             <div class="header-actions">
                 <button class="lang-switch" onclick="toggleLanguage()">
@@ -819,11 +844,11 @@
                     </div>
                     <div class="contact-item">
                         <span class="contact-item-icon">✉️</span>
-                        <a href="mailto:contact@cooprtim.ma" class="contact-link">contact@cooprtim.ma</a>
+                        <a href="/cdn-cgi/l/email-protection#5a3935342e3b392e1a3935352a282e333774373b" class="contact-link"><span class="__cf_email__" data-cfemail="6b0804051f0a081f2b0804041b191f020645060a">[email&#160;protected]</span></a>
                     </div>
                 </div>
             </div>
-
+            
             <div class="contact-block">
                 <h3 class="contact-title">Adresse</h3>
                 <div class="contact-info">
@@ -840,7 +865,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="contact-block">
                 <h3 class="contact-title">Livraison</h3>
                 <div class="contact-info">
@@ -867,393 +892,422 @@
         <p>&copy; 2024 Coopérative RTIM - Tous droits réservés</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Product data
         const productData = {
-            "cooperative": {
-                "nom": "Coopérative RTIM",
-                "nom_ar": "تعاونية رطيم",
-                "description": "Coopérative pour la vente de tous types de miel",
-                "description_ar": "تعاونية لبيع جميع أنواع العسل"
-            },
-            "categories": [
-                {
-                    "id": "huiles",
-                    "nom": "Huiles",
-                    "nom_ar": "الزيوت",
-                    "icon": "🫒",
-                    "produits": [
-                        {
-                            "id": "huile_olive_locale",
-                            "nom": "Huile d'olive locale",
-                            "nom_ar": "زيت الزيتون البلدية",
-                            "prix": 60,
-                            "unite": "litre",
-                            "unite_ar": "لتر",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ litre",
-                            "quantite_min_text_ar": "نص لتر"
-                        },
-                        {
-                            "id": "huile_olive_larbaouin",
-                            "nom": "Huile d'olive Larbaouin",
-                            "nom_ar": "زيت الزيتون لربقوين",
-                            "prix": 55,
-                            "unite": "litre",
-                            "unite_ar": "لتر",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ litre",
-                            "quantite_min_text_ar": "نص لتر"
-                        },
-                        {
-                            "id": "huile_argan_alimentaire",
-                            "nom": "Huile d'argan alimentaire",
-                            "nom_ar": "زيت أركان للأكل",
-                            "prix": 700,
-                            "unite": "litre",
-                            "unite_ar": "لتر",
-                            "quantite_min": 0.25,
-                            "quantite_min_text": "¼ litre",
-                            "quantite_min_text_ar": "ربع لتر"
-                        },
-                        {
-                            "id": "huile_argan_cosmetique",
-                            "nom": "Huile d'argan cosmétique",
-                            "nom_ar": "زيت أركان التجميل",
-                            "prix": 175,
-                            "unite": "¼ litre",
-                            "unite_ar": "ربع لتر",
-                            "quantite_min": 0.25,
-                            "quantite_min_text": "¼ litre",
-                            "quantite_min_text_ar": "ربع لتر"
-                        }
-                    ]
-                },
-                {
-                    "id": "miels",
-                    "nom": "Miels",
-                    "nom_ar": "أنواع العسل",
-                    "icon": "🍯",
-                    "produits": [
-                        {
-                            "id": "miel_thym",
-                            "nom": "Miel de thym pur",
-                            "nom_ar": "عسل الزعتر الحر",
-                            "prix": 400,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو",
-                            "description": "Miel pur de thym avec propriétés antibactériennes",
-                            "description_ar": "عسل الزعتر الحر غني بمضادات البكتيريا ومفيد للجهاز التنفسي"
-                        },
-                        {
-                            "id": "miel_daghmous",
-                            "nom": "Miel de Daghmous pur",
-                            "nom_ar": "عسل الدغموس الحر",
-                            "prix": 300,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو",
-                            "description": "Miel rare de haute qualité",
-                            "description_ar": "عسل نادر من أفضل أنواع العسل الطبيعية"
-                        },
-                        {
-                            "id": "miel_jujubier",
-                            "nom": "Miel de jujubier pur (Sidr)",
-                            "nom_ar": "عسل السدر الحر",
-                            "prix": 250,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو",
-                            "description": "Miel de qualité supérieure",
-                            "description_ar": "عسل السدر من أجود أنواع العسل"
-                        },
-                        {
-                            "id": "miel_caroube",
-                            "nom": "Miel de caroube",
-                            "nom_ar": "عسل الخروب",
-                            "prix": 200,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو",
-                            "description": "Bon pour la digestion",
-                            "description_ar": "مفيد للهضم والقولون"
-                        },
-                        {
-                            "id": "miel_eucalyptus",
-                            "nom": "Miel d'eucalyptus",
-                            "nom_ar": "عسل الكالبتوس",
-                            "prix": 200,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو",
-                            "description": "Excellent pour les voies respiratoires",
-                            "description_ar": "ممتاز للجهاز التنفسي"
-                        },
-                        {
-                            "id": "miel_herbes_pur",
-                            "nom": "Miel d'herbes pur",
-                            "nom_ar": "عسل الأعشاب الحر",
-                            "prix": 100,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو"
-                        },
-                        {
-                            "id": "miel_citron_pur",
-                            "nom": "Miel de citron pur",
-                            "nom_ar": "عسل الليمون الحر",
-                            "prix": 100,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو"
-                        },
-                        {
-                            "id": "miel_rayon",
-                            "nom": "Miel en rayon (Shahda)",
-                            "nom_ar": "عسل الشهدة",
-                            "prix": 100,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 1,
-                            "quantite_min_text": "1 kg",
-                            "quantite_min_text_ar": "كيلو"
-                        },
-                        {
-                            "id": "miel_herbes_nourri",
-                            "nom": "Miel d'herbes nourri",
-                            "nom_ar": "عسل الأعشاب المعلف",
-                            "prix": 60,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 1,
-                            "quantite_min_text": "1 kg",
-                            "quantite_min_text_ar": "كيلو"
-                        },
-                        {
-                            "id": "miel_citron_nourri",
-                            "nom": "Miel de citron nourri",
-                            "nom_ar": "عسل الليمون المعلف",
-                            "prix": 60,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 1,
-                            "quantite_min_text": "1 kg",
-                            "quantite_min_text_ar": "كيلو"
-                        }
-                    ]
-                },
-                {
-                    "id": "amlou",
-                    "nom": "Amlou (Pâtes à tartiner)",
-                    "nom_ar": "أملو",
-                    "icon": "🥜",
-                    "produits": [
-                        {
-                            "id": "amlou_cajou",
-                            "nom": "Amlou aux noix de cajou",
-                            "nom_ar": "أملو أكاجو",
-                            "prix": 200,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو",
-                            "description": "Avec huile d'argan et miel d'herbes",
-                            "description_ar": "بزيت أركان وعسل الأعشاب"
-                        },
-                        {
-                            "id": "amlou_pistache",
-                            "nom": "Amlou aux pistaches",
-                            "nom_ar": "أملو بيسطاش",
-                            "prix": 200,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو",
-                            "description": "Avec huile d'argan et miel",
-                            "description_ar": "بزيت أركان والعسل"
-                        },
-                        {
-                            "id": "amlou_amandes_argan",
-                            "nom": "Amlou aux amandes avec huile d'argan",
-                            "nom_ar": "أملو اللوز بزيت أركان",
-                            "prix": 180,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو",
-                            "description": "Amandes, huile d'argan et miel de citron",
-                            "description_ar": "اللوز وزيت أركان وعسل الليمون"
-                        },
-                        {
-                            "id": "amlou_amandes_olive",
-                            "nom": "Amlou aux amandes avec huile d'olive",
-                            "nom_ar": "أملو اللوز بزيت الزيتون",
-                            "prix": 100,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو"
-                        },
-                        {
-                            "id": "amlou_graines_courge",
-                            "nom": "Amlou aux graines de courge",
-                            "nom_ar": "أملو ببدور اليقطين",
-                            "prix": 100,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو",
-                            "description": "Bon pour la prostate et la fertilité",
-                            "description_ar": "مفيد للبروستاتا والخصوبة"
-                        },
-                        {
-                            "id": "amlou_cacao",
-                            "nom": "Amlou cacao aux herbes",
-                            "nom_ar": "أملو كاوكاو بالأعشاب",
-                            "prix": 70,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.5,
-                            "quantite_min_text": "½ kg",
-                            "quantite_min_text_ar": "نص كيلو"
-                        }
-                    ]
-                },
-                {
-                    "id": "produits_naturels",
-                    "nom": "Produits naturels",
-                    "nom_ar": "منتوجات طبيعية",
-                    "icon": "🌿",
-                    "produits": [
-                        {
-                            "id": "fruits_secs_miel",
-                            "nom": "Fruits secs au miel",
-                            "nom_ar": "مكسرات بالعسل",
-                            "prix": 300,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "description": "Mélange de noix, amandes, pistaches, cajou, etc.",
-                            "description_ar": "خليط من الكركاع واللوز والبيسطاش والأكاجو وغيرها"
-                        },
-                        {
-                            "id": "pollen",
-                            "nom": "Pollen d'abeille",
-                            "nom_ar": "حبوب اللقاح",
-                            "prix": 300,
-                            "unite": "kg",
-                            "unite_ar": "كيلو",
-                            "quantite_min": 0.1,
-                            "quantite_min_text": "100g",
-                            "quantite_min_text_ar": "100 غرام",
-                            "description": "Riche en protéines et vitamines",
-                            "description_ar": "غني بالبروتينات والفيتامينات"
-                        },
-                        {
-                            "id": "composition_quadruple",
-                            "nom": "Composition quadruple",
-                            "nom_ar": "التركيبة الرباعية",
-                            "prix": 220,
-                            "unite": "¼ kg",
-                            "unite_ar": "ربعة",
-                            "quantite_min": 0.25,
-                            "quantite_min_text": "¼ kg",
-                            "quantite_min_text_ar": "ربعة",
-                            "description": "Miel Daghmous, pollen, propolis, ginseng, pollen de palmier",
-                            "description_ar": "عسل الدغموس، حبوب اللقاح، البروبوليس، جينسينغ، طلع النخيل"
-                        },
-                        {
-                            "id": "khol_ithmid",
-                            "nom": "Khôl Ithmid original",
-                            "nom_ar": "كحل الإثمد الأصلي",
-                            "prix": 75,
-                            "unite": "unité",
-                            "unite_ar": "وحدة"
-                        },
-                        {
-                            "id": "safran",
-                            "nom": "Safran pur",
-                            "nom_ar": "زعفران حر",
-                            "prix": 30,
-                            "unite": "gramme",
-                            "unite_ar": "غرام",
-                            "quantite_min": 5,
-                            "quantite_min_text": "5g",
-                            "quantite_min_text_ar": "5 غرام"
-                        },
-                        {
-                            "id": "propolis",
-                            "nom": "Propolis",
-                            "nom_ar": "البروبوليس",
-                            "prix": 8,
-                            "unite": "gramme",
-                            "unite_ar": "غرام",
-                            "quantite_min": 5,
-                            "quantite_min_text": "5g",
-                            "quantite_min_text_ar": "5 غرام",
-                            "description": "Antibactérien naturel",
-                            "description_ar": "مضاد طبيعي للبكتيريا"
-                        },
-                        {
-                            "id": "encens_oman",
-                            "nom": "Encens d'Oman (Laban Dakr)",
-                            "nom_ar": "اللبان الدكر",
-                            "prix": 5,
-                            "unite": "gramme",
-                            "unite_ar": "غرام",
-                            "quantite_min": 5,
-                            "quantite_min_text": "5g",
-                            "quantite_min_text_ar": "5 غرام",
-                            "description": "Encens pur du Sultanat d'Oman",
-                            "description_ar": "لبان حر من سلطنة عمان"
-                        },
-                        {
-                            "id": "mastic",
-                            "nom": "Mastic pur",
-                            "nom_ar": "المسكة الحرة",
-                            "prix": 10,
-                            "unite": "gramme",
-                            "unite_ar": "غرام",
-                            "quantite_min": 5,
-                            "quantite_min_text": "5g",
-                            "quantite_min_text_ar": "5 غرام"
-                        },
-                        {
-                            "id": "gomme_arabique",
-                            "nom": "Gomme arabique",
-                            "nom_ar": "الصمغ العربي",
-                            "prix": 1,
-                            "unite": "gramme",
-                            "unite_ar": "غرام",
-                            "quantite_min": 5,
-                            "quantite_min_text": "5g",
-                            "quantite_min_text_ar": "5 غرام",
-                            "description": "De la région de Tata",
-                            "description_ar": "من منطقة طاطا"
-                        }
-                    ]
-                }
-            ]
-        };
+  "cooperative": {
+    "nom": "Coopérative RTIM",
+    "nom_ar": "تعاونية رطيم",
+    "description": "Coopérative pour la vente de tous types de miel",
+    "description_ar": "تعاونية لبيع جميع أنواع العسل"
+  },
+  "categories": [
+    {
+      "id": "huiles",
+      "nom": "Huiles",
+      "nom_ar": "الزيوت",
+      "icon": "🫒",
+      "produits": [
+        {
+          "id": "huile_olive_locale",
+          "nom": "Huile d'olive locale",
+          "nom_ar": "زيت الزيتون البلدية",
+          "prix": 60,
+          "unite": "litre",
+          "unite_ar": "لتر",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ litre",
+          "quantite_min_text_ar": "نص لتر",
+          "image": "huile_olive_locale.jpg"
+        },
+        {
+          "id": "huile_olive_larbaouin",
+          "nom": "Huile d'olive Larbaouin",
+          "nom_ar": "زيت الزيتون لربقوين",
+          "prix": 55,
+          "unite": "litre",
+          "unite_ar": "لتر",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ litre",
+          "quantite_min_text_ar": "نص لتر",
+          "image": "huile_olive_larbaouin.jpg"
+        },
+        {
+          "id": "huile_argan_alimentaire",
+          "nom": "Huile d'argan alimentaire",
+          "nom_ar": "زيت أركان للأكل",
+          "prix": 700,
+          "unite": "litre",
+          "unite_ar": "لتر",
+          "quantite_min": 0.25,
+          "quantite_min_text": "¼ litre",
+          "quantite_min_text_ar": "ربع لتر",
+          "image": "huile_argan_alimentaire.jpg"
+        },
+        {
+          "id": "huile_argan_cosmetique",
+          "nom": "Huile d'argan cosmétique",
+          "nom_ar": "زيت أركان التجميل",
+          "prix": 175,
+          "unite": "¼ litre",
+          "unite_ar": "ربع لتر",
+          "quantite_min": 0.25,
+          "quantite_min_text": "¼ litre",
+          "quantite_min_text_ar": "ربع لتر",
+          "image": "huile_argan_cosmetique.jpg"
+        }
+      ]
+    },
+    {
+      "id": "miels",
+      "nom": "Miels",
+      "nom_ar": "أنواع العسل",
+      "icon": "🍯",
+      "produits": [
+        {
+          "id": "miel_thym",
+          "nom": "Miel de thym pur",
+          "nom_ar": "عسل الزعتر الحر",
+          "prix": 400,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "description": "Miel pur de thym avec propriétés antibactériennes",
+          "description_ar": "عسل الزعتر الحر غني بمضادات البكتيريا ومفيد للجهاز التنفسي",
+          "image": "miel_thym.jpg"
+        },
+        {
+          "id": "miel_daghmous",
+          "nom": "Miel de Daghmous pur",
+          "nom_ar": "عسل الدغموس الحر",
+          "prix": 300,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "description": "Miel rare de haute qualité",
+          "description_ar": "عسل نادر من أفضل أنواع العسل الطبيعية",
+          "image": "miel_daghmous.jpg"
+        },
+        {
+          "id": "miel_jujubier",
+          "nom": "Miel de jujubier pur (Sidr)",
+          "nom_ar": "عسل السدر الحر",
+          "prix": 250,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "description": "Miel de qualité supérieure",
+          "description_ar": "عسل السدر من أجود أنواع العسل",
+          "image": "miel_jujubier.jpg"
+        },
+        {
+          "id": "miel_caroube",
+          "nom": "Miel de caroube",
+          "nom_ar": "عسل الخروب",
+          "prix": 200,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "description": "Bon pour la digestion",
+          "description_ar": "مفيد للهضم والقولون",
+          "image": "miel_caroube.jpg"
+        },
+        {
+          "id": "miel_eucalyptus",
+          "nom": "Miel d'eucalyptus",
+          "nom_ar": "عسل الكالبتوس",
+          "prix": 200,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "description": "Excellent pour les voies respiratoires",
+          "description_ar": "ممتاز للجهاز التنفسي",
+          "image": "miel_eucalyptus.jpg"
+        },
+        {
+          "id": "miel_herbes_pur",
+          "nom": "Miel d'herbes pur",
+          "nom_ar": "عسل الأعشاب الحر",
+          "prix": 100,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "image": "miel_herbes_pur.jpg"
+        },
+        {
+          "id": "miel_citron_pur",
+          "nom": "Miel de citron pur",
+          "nom_ar": "عسل الليمون الحر",
+          "prix": 100,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "image": "miel_citron_pur.jpg"
+        },
+        {
+          "id": "miel_rayon",
+          "nom": "Miel en rayon (Shahda)",
+          "nom_ar": "عسل الشهدة",
+          "prix": 100,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 1,
+          "quantite_min_text": "1 kg",
+          "quantite_min_text_ar": "كيلو",
+          "image": "miel_rayon.jpg"
+        },
+        {
+          "id": "miel_herbes_nourri",
+          "nom": "Miel d'herbes nourri",
+          "nom_ar": "عسل الأعشاب المعلف",
+          "prix": 60,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 1,
+          "quantite_min_text": "1 kg",
+          "quantite_min_text_ar": "كيلو",
+          "image": "miel_herbes_nourri.jpg"
+        },
+        {
+          "id": "miel_citron_nourri",
+          "nom": "Miel de citron nourri",
+          "nom_ar": "عسل الليمون المعلف",
+          "prix": 60,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 1,
+          "quantite_min_text": "1 kg",
+          "quantite_min_text_ar": "كيلو",
+          "image": "miel_citron_nourri.jpg"
+        }
+      ]
+    },
+    {
+      "id": "amlou",
+      "nom": "Amlou (Pâtes à tartiner)",
+      "nom_ar": "أملو",
+      "icon": "🥜",
+      "produits": [
+        {
+          "id": "amlou_cajou",
+          "nom": "Amlou aux noix de cajou",
+          "nom_ar": "أملو أكاجو",
+          "prix": 200,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "description": "Avec huile d'argan et miel d'herbes",
+          "description_ar": "بزيت أركان وعسل الأعشاب",
+          "image": "amlou_cajou.jpg"
+        },
+        {
+          "id": "amlou_pistache",
+          "nom": "Amlou aux pistaches",
+          "nom_ar": "أملو بيسطاش",
+          "prix": 200,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "description": "Avec huile d'argan et miel",
+          "description_ar": "بزيت أركان والعسل",
+          "image": "amlou_pistache.jpg"
+        },
+        {
+          "id": "amlou_amandes_argan",
+          "nom": "Amlou aux amandes avec huile d'argan",
+          "nom_ar": "أملو اللوز بزيت أركان",
+          "prix": 180,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "description": "Amandes, huile d'argan et miel de citron",
+          "description_ar": "اللوز وزيت أركان وعسل الليمون",
+          "image": "amlou_amandes_argan.jpg"
+        },
+        {
+          "id": "amlou_amandes_olive",
+          "nom": "Amlou aux amandes avec huile d'olive",
+          "nom_ar": "أملو اللوز بزيت الزيتون",
+          "prix": 100,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "image": "amlou_amandes_olive.jpg"
+        },
+        {
+          "id": "amlou_graines_courge",
+          "nom": "Amlou aux graines de courge",
+          "nom_ar": "أملو ببدور اليقطين",
+          "prix": 100,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "description": "Bon pour la prostate et la fertilité",
+          "description_ar": "مفيد للبروستاتا والخصوبة",
+          "image": "amlou_graines_courge.jpg"
+        },
+        {
+          "id": "amlou_cacao",
+          "nom": "Amlou cacao aux herbes",
+          "nom_ar": "أملو كاوكاو بالأعشاب",
+          "prix": 70,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.5,
+          "quantite_min_text": "½ kg",
+          "quantite_min_text_ar": "نص كيلو",
+          "image": "amlou_cacao.jpg"
+        }
+      ]
+    },
+    {
+      "id": "produits_naturels",
+      "nom": "Produits naturels",
+      "nom_ar": "منتوجات طبيعية",
+      "icon": "🌿",
+      "produits": [
+        {
+          "id": "fruits_secs_miel",
+          "nom": "Fruits secs au miel",
+          "nom_ar": "مكسرات بالعسل",
+          "prix": 300,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "description": "Mélange de noix, amandes, pistaches, cajou, etc.",
+          "description_ar": "خليط من الكركاع واللوز والبيسطاش والأكاجو وغيرها",
+          "image": "fruits_secs_miel.jpg"
+        },
+        {
+          "id": "pollen",
+          "nom": "Pollen d'abeille",
+          "nom_ar": "حبوب اللقاح",
+          "prix": 300,
+          "unite": "kg",
+          "unite_ar": "كيلو",
+          "quantite_min": 0.1,
+          "quantite_min_text": "100g",
+          "quantite_min_text_ar": "100 غرام",
+          "description": "Riche en protéines et vitamines",
+          "description_ar": "غني بالبروتينات والفيتامينات",
+          "image": "pollen.jpg"
+        },
+        {
+          "id": "composition_quadruple",
+          "nom": "Composition quadruple",
+          "nom_ar": "التركيبة الرباعية",
+          "prix": 220,
+          "unite": "¼ kg",
+          "unite_ar": "ربعة",
+          "quantite_min": 0.25,
+          "quantite_min_text": "¼ kg",
+          "quantite_min_text_ar": "ربعة",
+          "description": "Miel Daghmous, pollen, propolis, ginseng, pollen de palmier",
+          "description_ar": "عسل الدغموس، حبوب اللقاح، البروبوليس، جينسينغ، طلع النخيل",
+          "image": "composition_quadruple.jpg"
+        },
+        {
+          "id": "khol_ithmid",
+          "nom": "Khôl Ithmid original",
+          "nom_ar": "كحل الإثمد الأصلي",
+          "prix": 75,
+          "unite": "unité",
+          "unite_ar": "وحدة",
+          "image": "khol_ithmid.jpg"
+        },
+        {
+          "id": "safran",
+          "nom": "Safran pur",
+          "nom_ar": "زعفران حر",
+          "prix": 30,
+          "unite": "gramme",
+          "unite_ar": "غرام",
+          "quantite_min": 5,
+          "quantite_min_text": "5g",
+          "quantite_min_text_ar": "5 غرام",
+          "image": "safran.jpg"
+        },
+        {
+          "id": "propolis",
+          "nom": "Propolis",
+          "nom_ar": "البروبوليس",
+          "prix": 8,
+          "unite": "gramme",
+          "unite_ar": "غرام",
+          "quantite_min": 5,
+          "quantite_min_text": "5g",
+          "quantite_min_text_ar": "5 غرام",
+          "description": "Antibactérien naturel",
+          "description_ar": "مضاد طبيعي للبكتيريا",
+          "image": "propolis.jpg"
+        },
+        {
+          "id": "encens_oman",
+          "nom": "Encens d'Oman (Laban Dakr)",
+          "nom_ar": "اللبان الدكر",
+          "prix": 5,
+          "unite": "gramme",
+          "unite_ar": "غرام",
+          "quantite_min": 5,
+          "quantite_min_text": "5g",
+          "quantite_min_text_ar": "5 غرام",
+          "description": "Encens pur du Sultanat d'Oman",
+          "description_ar": "لبان حر من سلطنة عمان",
+          "image": "encens_oman.jpg"
+        },
+        {
+          "id": "mastic",
+          "nom": "Mastic pur",
+          "nom_ar": "المسكة الحرة",
+          "prix": 10,
+          "unite": "gramme",
+          "unite_ar": "غرام",
+          "quantite_min": 5,
+          "quantite_min_text": "5g",
+          "quantite_min_text_ar": "5 غرام",
+          "image": "mastic.jpg"
+        },
+        {
+          "id": "gomme_arabique",
+          "nom": "Gomme arabique",
+          "nom_ar": "الصمغ العربي",
+          "prix": 1,
+          "unite": "gramme",
+          "unite_ar": "غرام",
+          "quantite_min": 5,
+          "quantite_min_text": "5g",
+          "quantite_min_text_ar": "5 غرام",
+          "description": "De la région de Tata",
+          "description_ar": "من منطقة طاطا",
+          "image": "gomme_arabique.jpg"
+        }
+      ]
+    }
+  ]
+};
 
         // State
         let currentLang = 'fr';
@@ -1310,9 +1364,12 @@
 
         // Initialize
         function init() {
+            console.log('Initializing RTIM Shop...');
+            console.log('Product data:', productData);
             renderCategoryFilter();
             renderProducts();
             updateCartCount();
+            console.log('Initialization complete');
         }
 
         // Toggle language
@@ -1329,26 +1386,42 @@
         // Update translations
         function updateTranslations() {
             const t = translations[currentLang];
-            document.querySelector('.logo-text').textContent = t.logo;
-            document.querySelector('.lang-text').textContent = t.langBtn;
-            document.querySelector('.cart-btn-text').textContent = t.cartBtn;
-            document.querySelector('.hero-title').textContent = t.heroTitle;
-            document.querySelector('.hero-desc').textContent = t.heroDesc;
-            document.querySelector('.cart-title').textContent = t.yourCart;
-
+            
+            // Safely update elements if they exist
+            const logoText = document.querySelector('.logo-text');
+            if (logoText) logoText.textContent = t.logo;
+            
+            const langText = document.querySelector('.lang-text');
+            if (langText) langText.textContent = t.langBtn;
+            
+            const cartBtnText = document.querySelector('.cart-btn-text');
+            if (cartBtnText) cartBtnText.textContent = t.cartBtn;
+            
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle) heroTitle.textContent = t.heroTitle;
+            
+            const heroDesc = document.querySelector('.hero-desc');
+            if (heroDesc) heroDesc.textContent = t.heroDesc;
+            
+            const cartTitle = document.querySelector('.cart-title');
+            if (cartTitle) cartTitle.textContent = t.yourCart;
+            
             // Update contact section
-            document.querySelectorAll('.contact-title')[0].textContent = t.contactTitle;
-            document.querySelectorAll('.contact-title')[1].textContent = t.addressTitle;
-            document.querySelectorAll('.contact-title')[2].textContent = t.deliveryTitle;
-            document.querySelector('.contact-address').innerHTML = t.address;
-            document.querySelector('.contact-hours').textContent = t.hours;
-            document.querySelector('.contact-detail').textContent = t.whatsappAvailable;
-            document.querySelectorAll('.delivery-title')[0].parentElement.innerHTML = t.deliveryMorocco.includes('Maroc') ?
-                `<span class="contact-item-icon">🇲🇦</span><div>${t.deliveryMorocco}</div>` :
-                document.querySelectorAll('.delivery-title')[0].parentElement.innerHTML;
-            document.querySelectorAll('.delivery-title')[1].parentElement.innerHTML = t.deliveryInternational.includes('International') ?
-                `<span class="contact-item-icon">🌍</span><div>${t.deliveryInternational}</div>` :
-                document.querySelectorAll('.delivery-title')[1].parentElement.innerHTML;
+            const contactTitles = document.querySelectorAll('.contact-title');
+            if (contactTitles.length >= 3) {
+                contactTitles[0].textContent = t.contactTitle;
+                contactTitles[1].textContent = t.addressTitle;
+                contactTitles[2].textContent = t.deliveryTitle;
+            }
+            
+            const contactAddress = document.querySelector('.contact-address');
+            if (contactAddress) contactAddress.innerHTML = t.address;
+            
+            const contactHours = document.querySelector('.contact-hours');
+            if (contactHours) contactHours.textContent = t.hours;
+            
+            const contactDetail = document.querySelector('.contact-detail');
+            if (contactDetail) contactDetail.textContent = t.whatsappAvailable;
         }
 
         // Render category filter
@@ -1359,7 +1432,7 @@
                                data-category="all" onclick="filterProducts('all')">
                 <span class="cat-text">${t.allProducts}</span>
             </button>`;
-
+            
             productData.categories.forEach(cat => {
                 const name = currentLang === 'ar' ? cat.nom_ar : cat.nom;
                 html += `<button class="category-btn ${currentFilter === cat.id ? 'active' : ''}" 
@@ -1367,7 +1440,7 @@
                     <span class="cat-text">${cat.icon || ''} ${name}</span>
                 </button>`;
             });
-
+            
             filterContainer.innerHTML = html;
         }
 
@@ -1383,28 +1456,34 @@
             const t = translations[currentLang];
             const container = document.getElementById('productsContainer');
             let html = '';
-
-            const categoriesToShow = currentFilter === 'all'
-                ? productData.categories
+            
+            const categoriesToShow = currentFilter === 'all' 
+                ? productData.categories 
                 : productData.categories.filter(c => c.id === currentFilter);
-
+            
             categoriesToShow.forEach(category => {
                 const catName = currentLang === 'ar' ? category.nom_ar : category.nom;
                 html += `<div class="category-section">
                     <h2 class="category-title">${category.icon || ''} ${catName}</h2>
                     <div class="products-grid">`;
-
+                
                 category.produits.forEach(product => {
                     const name = currentLang === 'ar' ? product.nom_ar : product.nom;
                     const unit = currentLang === 'ar' ? product.unite_ar : product.unite;
-                    const desc = product.description
+                    const desc = product.description 
                         ? (currentLang === 'ar' ? product.description_ar : product.description)
                         : '';
                     const minQty = product.quantite_min || 1;
-
+                    const imageUrl = product.image ? `images/${product.image}` : '';
+                    
                     html += `
                         <div class="product-card">
-                            <div class="product-icon">${category.icon || '🍯'}</div>
+                            ${imageUrl ? 
+                                `<img src="${imageUrl}" alt="${name}" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="product-image-placeholder" style="display:none;">${category.icon || '🍯'}</div>` 
+                                : 
+                                `<div class="product-image-placeholder">${category.icon || '🍯'}</div>`
+                            }
                             <h3 class="product-name">${name}</h3>
                             ${desc ? `<p class="product-description">${desc}</p>` : '<p class="product-description">&nbsp;</p>'}
                             <div class="product-price">
@@ -1422,10 +1501,10 @@
                         </div>
                     `;
                 });
-
+                
                 html += `</div></div>`;
             });
-
+            
             container.innerHTML = html;
         }
 
@@ -1442,10 +1521,10 @@
             const category = productData.categories.find(c => c.id === categoryId);
             const product = category.produits.find(p => p.id === productId);
             const quantity = parseFloat(document.getElementById(`qty-${productId}`).value);
-
+            
             const existingItem = cart.find(item => item.id === productId);
             if (existingItem) {
-                existingItem.quantity += quantity;
+                existingItem.quantity = quantity;
             } else {
                 cart.push({
                     id: productId,
@@ -1454,9 +1533,9 @@
                     quantity: quantity
                 });
             }
-
+            
             updateCartCount();
-
+            
             // Success animation
             const btn = event.target;
             btn.classList.add('success');
@@ -1482,7 +1561,7 @@
         function renderCart() {
             const t = translations[currentLang];
             const container = document.getElementById('cartItemsContainer');
-
+            
             if (cart.length === 0) {
                 container.innerHTML = `
                     <div class="empty-cart">
@@ -1492,16 +1571,16 @@
                 `;
                 return;
             }
-
+            
             let html = '<div class="cart-items">';
             let total = 0;
-
+            
             cart.forEach((item, index) => {
                 const name = currentLang === 'ar' ? item.product.nom_ar : item.product.nom;
                 const unit = currentLang === 'ar' ? item.product.unite_ar : item.product.unite;
                 const itemTotal = item.product.prix * item.quantity;
                 total += itemTotal;
-
+                
                 html += `
                     <div class="cart-item">
                         <div class="cart-item-info">
@@ -1513,7 +1592,7 @@
                     </div>
                 `;
             });
-
+            
             html += `</div>
                 <div class="cart-total">
                     <div class="cart-total-row final">
@@ -1525,7 +1604,7 @@
                     ${t.checkout}
                 </button>
             `;
-
+            
             container.innerHTML = html;
         }
 
@@ -1539,10 +1618,10 @@
         // Checkout
         function checkout() {
             const t = translations[currentLang];
-            let message = currentLang === 'ar'
+            let message = currentLang === 'ar' 
                 ? 'مرحبا، أريد طلب المنتوجات التالية:\n\n'
                 : 'Bonjour, je voudrais commander les produits suivants:\n\n';
-
+            
             let total = 0;
             cart.forEach(item => {
                 const name = currentLang === 'ar' ? item.product.nom_ar : item.product.nom;
@@ -1551,24 +1630,23 @@
                 total += itemTotal;
                 message += `• ${name}: ${item.quantity} ${unit} - ${itemTotal} DH\n`;
             });
-
+            
             message += `\n${t.total}: ${total} DH`;
-
+            
             const whatsappUrl = `https://wa.me/212667980445?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
 
         // Initialize on load
-        init();
-
-        // Close modal when clicking outside
-        window.onclick = function (event) {
-            const modal = document.getElementById('cartModal');
-            if (event.target == modal) {
-                toggleCart();
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing...');
+            try {
+                init();
+            } catch (error) {
+                console.error('Error during initialization:', error);
             }
-        }
+        });
     </script>
 </body>
-
 </html>
+  
